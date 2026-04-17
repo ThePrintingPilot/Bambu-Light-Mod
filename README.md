@@ -1,8 +1,13 @@
-# Bambu Light Mod
-
-**A smart lighting addon that keeps your secondary LED lights in perfect sync with your Bambu Lab printer's chamber light — locally, instantly, no cloud required..**
-
-Built by [The Printing Pilot](https://theprintingpilot.com) · [YouTube](https://www.youtube.com/@ThePrintingPilot) · [GitHub](https://github.com/ThePrintingPilot/Bambu-Light-Mod)
+<div align="center">
+  <img src="https://raw.githubusercontent.com/ThePrintingPilot/Bambu-Light-Mod/refs/heads/main/images/TPP-Mono_-_Copy.png" width="160" />
+  <h1>Bambu Light Mod</h1>
+  <p><strong>A smart lighting addon that keeps your secondary LED lights in perfect sync with your Bambu Lab printer's chamber light — locally, instantly, no cloud required.</strong></p>
+  <p>
+    <a href="https://theprintingpilot.com">🌐 Website</a> ·
+    <a href="https://www.youtube.com/@ThePrintingPilot">▶ YouTube</a> ·
+    <a href="https://github.com/ThePrintingPilot/Bambu-Light-Mod">◈ GitHub</a>
+  </p>
+</div>
 
 ---
 
@@ -11,6 +16,21 @@ Built by [The Printing Pilot](https://theprintingpilot.com) · [YouTube](https:/
 Bambu Light Mod is a smart lighting addon for Bambu Lab 3D printers. It adds a secondary LED strip inside your enclosure that automatically syncs with the printer's chamber light in real time — when the chamber light turns on, your addon lights follow, and when it turns off, they do too.
 
 Everything runs locally on your network. The ESP32 connects directly to the printer's local MQTT broker — no cloud, no polling, no delays. State changes are instant and nothing ever leaves your network.
+
+---
+
+## Get One
+
+<img src="https://raw.githubusercontent.com/ThePrintingPilot/Bambu-Light-Mod/refs/heads/main/images/TPP-Mono_-_Copy.png" width="80" align="right" />
+
+Bambu Light Mod is fully open source — all the firmware, PCB files, and enclosure designs are available here for you to build yourself.
+
+That said, because we manufacture these in volume, **buying directly from our store is almost always cheaper than sourcing the parts and assembling it yourself** — and you get a fully assembled, tested board ready to plug in.
+
+More importantly, every purchase directly supports The Printing Pilot. It allows us to keep improving this product, push firmware updates, and continue designing new tools for the Bambu Lab community.
+
+> ### 🛒 [Buy from The Printing Pilot Store](https://theprintingpilot.com)
+> Fully assembled · Tested · Ready to plug in
 
 ---
 
@@ -28,21 +48,19 @@ The heart of the project is a custom-designed PCB built around the ESP32-C3. It 
 
 The PCB draws power directly from the printer's AMS connector. No external power supply, no USB cable, no extra wiring. Plug it into the AMS port and the board powers up immediately.
 
-<img src="https://raw.githubusercontent.com/ThePrintingPilot/Bambu-Light-Mod/refs/heads/main/images/3.jpg" width="430" height="250" /> 
+<img src="https://raw.githubusercontent.com/ThePrintingPilot/Bambu-Light-Mod/refs/heads/main/images/3.jpg" width="430" height="250" />
 
 ### Custom 3D Printed Enclosure
 
 The electronics sit inside a custom 3D printed enclosure with embedded magnets that attach directly to the outside of the printer. The enclosure was designed with the Bambu Light Mod logo embossed on the front and is printed directly on the Bambu Lab printer it controls.
 
-<img src="https://raw.githubusercontent.com/ThePrintingPilot/Bambu-Light-Mod/refs/heads/main/images/1.jpg" width="430" height="250" /> 
+<img src="https://raw.githubusercontent.com/ThePrintingPilot/Bambu-Light-Mod/refs/heads/main/images/1.jpg" width="430" height="250" />
 
 ### Physical Toggle Switch
 
 A mechanical keyboard switch is mounted on the enclosure for offline manual control. Press it at any time to toggle the lights on or off independently of the printer — useful when you want to control the lights without opening the web interface or when the printer is idle.
 
-
-<img src="https://raw.githubusercontent.com/ThePrintingPilot/Bambu-Light-Mod/refs/heads/main/images/2.jpg" width="430" height="250" /> 
-
+<img src="https://raw.githubusercontent.com/ThePrintingPilot/Bambu-Light-Mod/refs/heads/main/images/2.jpg" width="430" height="250" />
 
 ---
 
@@ -65,7 +83,7 @@ The ESP hosts three pages you can access from any browser on your network.
 
 ### `http://ESP_IP` — Config
 
-<img src="https://raw.githubusercontent.com/ThePrintingPilot/Bambu-Light-Mod/refs/heads/main/images/ui_config.png" width="400" height="650" /> 
+<img src="https://raw.githubusercontent.com/ThePrintingPilot/Bambu-Light-Mod/refs/heads/main/images/ui_config.png" width="400" height="650" />
 
 The main setup page. Enter your WiFi credentials, printer IP address, and local access code. The serial number is auto-detected from the printer — no need to look it up manually.
 
@@ -77,7 +95,7 @@ If a newer firmware version is available on GitHub, the version badge in the top
 
 ### `http://ESP_IP/webserial` — Live Logs
 
-<img src="https://raw.githubusercontent.com/ThePrintingPilot/Bambu-Light-Mod/refs/heads/main/images/ui_webserial.png" width="400" height="550" /> 
+<img src="https://raw.githubusercontent.com/ThePrintingPilot/Bambu-Light-Mod/refs/heads/main/images/ui_webserial.png" width="400" height="550" />
 
 A live log viewer — no USB cable or Arduino IDE needed. See exactly what the ESP is doing in real time, colour coded by module. Useful for debugging connection issues or just confirming everything is working.
 
@@ -85,7 +103,7 @@ A live log viewer — no USB cable or Arduino IDE needed. See exactly what the E
 
 ### `http://ESP_IP/ota` — Firmware Update
 
-<img src="https://raw.githubusercontent.com/ThePrintingPilot/Bambu-Light-Mod/refs/heads/main/images/ui_ota.png" width="400" height="650" /> 
+<img src="https://raw.githubusercontent.com/ThePrintingPilot/Bambu-Light-Mod/refs/heads/main/images/ui_ota.png" width="400" height="650" />
 
 Update the firmware wirelessly without connecting a USB cable. Download the latest `.bin` from the [releases page](https://github.com/ThePrintingPilot/Bambu-Light-Mod/releases), select it on this page, and hit **Flash Firmware**. The ESP updates and reboots automatically.
 
@@ -93,10 +111,10 @@ Update the firmware wirelessly without connecting a USB cable. Download the late
 
 ## Supported Printers
 
-Tested on the **P2S**. Software Should work on any Bambu Lab printer with Developer Mode enabled, but for now the PCB comes with a 6 pin AMS/AMS Pro connector.
+Tested on the **P2S**. Software should work on any Bambu Lab printer with Developer Mode enabled, but for now the PCB comes with a 6 pin AMS/AMS Pro connector.
 
 **For AMS Lite Users**
-For now, PCB does not come with the 4 pin AMS Lite connector. But the board will work with external power. Feature update will add another version for the PCB with 4 pin AMS Lite.
+For now, the PCB does not come with the 4 pin AMS Lite connector. The board will still work with external power. A future update will add a PCB variant with the 4 pin AMS Lite connector.
 
 | Series | Models |
 |---|---|
@@ -107,7 +125,10 @@ For now, PCB does not come with the 4 pin AMS Lite connector. But the board will
 
 To enable Developer Mode on your printer: **Settings → Network → Developer Mode → Enable**
 
-
 ---
 
-Made with ❤️ by [The Printing Pilot](https://theprintingpilot.com)
+<div align="center">
+  <img src="https://raw.githubusercontent.com/ThePrintingPilot/Bambu-Light-Mod/refs/heads/main/images/TPP-Mono_-_Copy.png" width="80" />
+  <br>
+  Made with ❤️ by <a href="https://theprintingpilot.com">The Printing Pilot</a>
+</div>
