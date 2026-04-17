@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="https://raw.githubusercontent.com/ThePrintingPilot/Bambu-Light-Mod/refs/heads/main/images/TPP-Mono_-_Copy.png" width="160" />
+  <img src="https://raw.githubusercontent.com/ThePrintingPilot/Bambu-Light-Mod/refs/heads/main/images/TPP-Mono.png" width="160" />
   <h1>Bambu Light Mod</h1>
   <p><strong>A smart lighting addon that keeps your secondary LED lights in perfect sync with your Bambu Lab printer's chamber light — locally, instantly, no cloud required.</strong></p>
   <p>
@@ -21,7 +21,7 @@ Everything runs locally on your network. The ESP32 connects directly to the prin
 
 ## Get One
 
-<img src="https://raw.githubusercontent.com/ThePrintingPilot/Bambu-Light-Mod/refs/heads/main/images/TPP-Mono_-_Copy.png" width="80" align="right" />
+<img src="https://raw.githubusercontent.com/ThePrintingPilot/Bambu-Light-Mod/refs/heads/main/images/TPP-Mono.png" width="80" align="right" />
 
 Bambu Light Mod is fully open source — all the firmware, PCB files, and enclosure designs are available here for you to build yourself.
 
@@ -128,7 +128,7 @@ To enable Developer Mode on your printer: **Settings → Network → Developer M
 ---
 
 <div align="center">
-  <img src="https://raw.githubusercontent.com/ThePrintingPilot/Bambu-Light-Mod/refs/heads/main/images/TPP-Mono_-_Copy.png" width="80" />
+  <img src="https://raw.githubusercontent.com/ThePrintingPilot/Bambu-Light-Mod/refs/heads/main/images/TPP-Mono.png" width="80" />
   <br>
   Made with ❤️ by <a href="https://theprintingpilot.com">The Printing Pilot</a>
 </div>
