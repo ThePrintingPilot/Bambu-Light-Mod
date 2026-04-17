@@ -32,7 +32,7 @@ The PCB draws power directly from the printer's AMS connector. No external power
 
 ### Custom 3D Printed Enclosure
 
-The electronics sit inside a custom 3D printed enclosure designed to fit cleanly inside the printer. The enclosure was designed with the Bambu Light Mod logo embossed on the front and is printed directly on the Bambu Lab printer it controls.
+The electronics sit inside a custom 3D printed enclosure with embedded magnets that attach directly to the outside of the printer. The enclosure was designed with the Bambu Light Mod logo embossed on the front and is printed directly on the Bambu Lab printer it controls.
 
 <img src="https://raw.githubusercontent.com/ThePrintingPilot/Bambu-Light-Mod/refs/heads/main/images/1.jpg" width="430" height="250" /> 
 
