@@ -7,6 +7,9 @@
     <a href="https://www.youtube.com/@ThePrintingPilot">▶ YouTube</a> ·
     <a href="https://github.com/ThePrintingPilot/Bambu-Light-Mod">◈ GitHub</a>
   </p>
+  <p>
+    <img src="https://img.shields.io/endpoint?url=https://bambu-light-mod.tomernassi.workers.dev/badge" alt="Active Devices" />
+  </p>
 </div>
 
 ---
