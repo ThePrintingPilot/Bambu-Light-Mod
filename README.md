@@ -11,17 +11,26 @@
 
 ---
 
-## What Is It?
+## What Is It? 
+
 
 Bambu Light Mod is a smart lighting addon for Bambu Lab 3D printers. It adds a secondary LED strip inside your enclosure that automatically syncs with the printer's chamber light in real time — when the chamber light turns on, your addon lights follow, and when it turns off, they do too.
 
 Everything runs locally on your network. The ESP32 connects directly to the printer's local MQTT broker — no cloud, no polling, no delays. State changes are instant and nothing ever leaves your network.
 
+
+
 ---
+
+</td>
+<td valign="middle" align="center" width="25%">
+<img src="https://raw.githubusercontent.com/ThePrintingPilot/Bambu-Light-Mod/refs/heads/main/images/TPP-Mono.png" width="120" />
+</td>
+</tr></table>
 
 ## Get One
 
-<img src="https://raw.githubusercontent.com/ThePrintingPilot/Bambu-Light-Mod/refs/heads/main/images/TPP-Mono.png" width="80" align="right" />
+<img src="https://raw.githubusercontent.com/ThePrintingPilot/Bambu-Light-Mod/refs/heads/main/images/TPP-Mono.png" width="" align="right" />
 
 Bambu Light Mod is fully open source — all the firmware, PCB files, and enclosure designs are available here for you to build yourself.
 
@@ -31,6 +40,7 @@ More importantly, every purchase directly supports The Printing Pilot. It allows
 
 > ### 🛒 [Buy from The Printing Pilot Store](https://theprintingpilot.com)
 > Fully assembled · Tested · Ready to plug in
+
 
 ---
 
