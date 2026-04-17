@@ -74,11 +74,6 @@ Tested on the **P2S**. Should work on any Bambu Lab printer with Developer Mode 
 
 To enable Developer Mode on your printer: **Settings → Network → Developer Mode → Enable**
 
----
-
-## License
-
-MIT — do whatever you want with it. Credit appreciated but not required.
 
 ---
 
