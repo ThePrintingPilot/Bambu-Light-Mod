@@ -1,6 +1,6 @@
 # Bambu Light Mod
 
-**Sync your Bambu Lab printer's chamber light to a GPIO pin — wirelessly, locally, no cloud required.**
+**A smart lighting addon that keeps your secondary LED lights in perfect sync with your Bambu Lab printer's chamber light — locally, instantly, no cloud required..**
 
 Built by [The Printing Pilot](https://theprintingpilot.com) · [YouTube](https://www.youtube.com/@ThePrintingPilot) · [GitHub](https://github.com/ThePrintingPilot/Bambu-Light-Mod)
 
@@ -8,11 +8,12 @@ Built by [The Printing Pilot](https://theprintingpilot.com) · [YouTube](https:/
 
 ## What Is It?
 
-Bambu Light Mod is firmware for the **ESP32-C3** that connects to your Bambu Lab printer over your local network. It watches the chamber light state and mirrors it to a GPIO pin in real time — when the light turns on, the GPIO goes HIGH, when it turns off, it goes LOW.
+Bambu Light Mod is a smart lighting addon for Bambu Lab 3D printers. It adds a secondary LED light strip to your printer enclosure that automatically syncs with the printer's built-in chamber light — when the chamber light turns on, your addon lights turn on too, and when it turns off, they follow.
 
-The custom PCB will turn additional LED lights connected to it on and off, following the chamber light status of the printer.
+The system runs entirely on your local network with no cloud connection required. A small ESP32-C3 module sits inside your enclosure and connects directly to your printer's local MQTT broker — the same local API Bambu Lab exposes for developer use. It listens for chamber light state changes in real time and drives a custom PCB that controls the additional LED lights.
 
-No Bambu Cloud. No internet required. Fully local.
+There is no polling, no delays, and no dependency on Bambu Cloud or any external service. Everything happens on your local network between the ESP32 and the printer, making it fast, reliable, and private.
+
 
 ---
 
