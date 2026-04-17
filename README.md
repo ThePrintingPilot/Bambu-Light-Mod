@@ -93,7 +93,10 @@ Update the firmware wirelessly without connecting a USB cable. Download the late
 
 ## Supported Printers
 
-Tested on the **P2S**. Should work on any Bambu Lab printer with Developer Mode enabled.
+Tested on the **P2S**. Software Should work on any Bambu Lab printer with Developer Mode enabled, but for now the PCB comes with a 6 pin AMS/AMS Pro connector.
+
+**For AMS Lite Users**
+For now, PCB does not come with the 4 pin AMS Lite connector. But the board will work with external power. Feature update will add another version for the PCB with 4 pin AMS Lite.
 
 | Series | Models |
 |---|---|
