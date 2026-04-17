@@ -8,13 +8,35 @@ Built by [The Printing Pilot](https://theprintingpilot.com) · [YouTube](https:/
 
 ## What Is It?
 
-Bambu Light Mod is a smart lighting addon for Bambu Lab 3D printers. It adds a secondary LED light strip to your printer enclosure that automatically syncs with the printer's built-in chamber light — when the chamber light turns on, your addon lights turn on too, and when it turns off, they follow.
+Bambu Light Mod is a smart lighting addon for Bambu Lab 3D printers. It adds a secondary LED strip inside your enclosure that automatically syncs with the printer's chamber light in real time — when the chamber light turns on, your addon lights follow, and when it turns off, they do too.
 
-The system runs entirely on your local network with no cloud connection required. A small ESP32-C3 module sits inside your enclosure and connects directly to your printer's local MQTT broker — the same local API Bambu Lab exposes for developer use. It listens for chamber light state changes in real time and drives a custom PCB that controls the additional LED lights.
+Everything runs locally on your network. The ESP32 connects directly to the printer's local MQTT broker — no cloud, no polling, no delays. State changes are instant and nothing ever leaves your network.
 
-There is no polling, no delays, and no dependency on Bambu Cloud or any external service. Everything happens on your local network between the ESP32 and the printer, making it fast, reliable, and private.
+---
 
-The whole system is built around a custom PCB that draws power directly from the printer's AMS connector — no separate power supply, no extra cables. Just plug it in and it works.
+## Hardware
+
+Bambu Light Mod is built around a fully custom hardware stack — everything from the PCB to the enclosure was designed specifically for this project.
+
+### Custom PCB
+
+The heart of the project is a custom-designed PCB built around the ESP32-C3. It handles the WiFi connection to the printer, drives the LED lights, and manages all the onboard electronics. There are no off-the-shelf modules or loose wiring — everything is integrated onto a single compact board.
+
+### Power via AMS Connector
+
+The PCB draws power directly from the printer's AMS connector. No external power supply, no USB cable, no extra wiring. Plug it into the AMS port and the board powers up immediately.
+
+### Custom 3D Printed Enclosure
+
+The electronics sit inside a custom 3D printed enclosure designed to fit cleanly inside the printer. The enclosure was designed with the Bambu Light Mod logo embossed on the front and is printed directly on the Bambu Lab printer it controls.
+
+### Physical Toggle Switch
+
+A mechanical keyboard switch is mounted on the enclosure for offline manual control. Press it at any time to toggle the lights on or off independently of the printer — useful when you want to control the lights without opening the web interface or when the printer is idle.
+
+<img src="https://raw.githubusercontent.com/ThePrintingPilot/Bambu-Light-Mod/refs/heads/main/images/PCB.png" width="430" height="260" /> 
+
+<img src="https://raw.githubusercontent.com/ThePrintingPilot/Bambu-Light-Mod/refs/heads/main/images/PCB.png" width="430" height="250" /> 
 
 ---
 
