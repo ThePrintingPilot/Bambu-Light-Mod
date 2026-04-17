@@ -22,21 +22,27 @@ Bambu Light Mod is built around a fully custom hardware stack — everything fro
 
 The heart of the project is a custom-designed PCB built around the ESP32-C3. It handles the WiFi connection to the printer, drives the LED lights, and manages all the onboard electronics. There are no off-the-shelf modules or loose wiring — everything is integrated onto a single compact board.
 
+<img src="https://raw.githubusercontent.com/ThePrintingPilot/Bambu-Light-Mod/refs/heads/main/images/PCB.png" width="430" height="260" />
+
 ### Power via AMS Connector
 
 The PCB draws power directly from the printer's AMS connector. No external power supply, no USB cable, no extra wiring. Plug it into the AMS port and the board powers up immediately.
+
+<img src="https://raw.githubusercontent.com/ThePrintingPilot/Bambu-Light-Mod/refs/heads/main/images/3.jpg" width="430" height="250" /> 
 
 ### Custom 3D Printed Enclosure
 
 The electronics sit inside a custom 3D printed enclosure designed to fit cleanly inside the printer. The enclosure was designed with the Bambu Light Mod logo embossed on the front and is printed directly on the Bambu Lab printer it controls.
 
+<img src="https://raw.githubusercontent.com/ThePrintingPilot/Bambu-Light-Mod/refs/heads/main/images/1.jpg" width="430" height="250" /> 
+
 ### Physical Toggle Switch
 
 A mechanical keyboard switch is mounted on the enclosure for offline manual control. Press it at any time to toggle the lights on or off independently of the printer — useful when you want to control the lights without opening the web interface or when the printer is idle.
 
-<img src="https://raw.githubusercontent.com/ThePrintingPilot/Bambu-Light-Mod/refs/heads/main/images/PCB.png" width="430" height="260" /> 
 
-<img src="https://raw.githubusercontent.com/ThePrintingPilot/Bambu-Light-Mod/refs/heads/main/images/PCB.png" width="430" height="250" /> 
+<img src="https://raw.githubusercontent.com/ThePrintingPilot/Bambu-Light-Mod/refs/heads/main/images/2.jpg" width="430" height="250" /> 
+
 
 ---
 
