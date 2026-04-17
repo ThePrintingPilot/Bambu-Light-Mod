@@ -35,7 +35,7 @@ The ESP hosts three pages you can access from any browser on your network.
 
 ### `http://ESP_IP` — Config
 
-![Config UI](docs/ui_config.png)
+<img src="https://raw.githubusercontent.com/ThePrintingPilot/Bambu-Light-Mod/refs/heads/main/images/ui_config.png" width="400" height="650" /> 
 
 The main setup page. Enter your WiFi credentials, printer IP address, and local access code. The serial number is auto-detected from the printer — no need to look it up manually.
 
@@ -47,7 +47,7 @@ If a newer firmware version is available on GitHub, the version badge in the top
 
 ### `http://ESP_IP/webserial` — Live Logs
 
-![Web Serial](docs/ui_webserial.png)
+<img src="https://raw.githubusercontent.com/ThePrintingPilot/Bambu-Light-Mod/refs/heads/main/images/ui_webserial.png" width="400" height="550" /> 
 
 A live log viewer — no USB cable or Arduino IDE needed. See exactly what the ESP is doing in real time, colour coded by module. Useful for debugging connection issues or just confirming everything is working.
 
@@ -55,7 +55,7 @@ A live log viewer — no USB cable or Arduino IDE needed. See exactly what the E
 
 ### `http://ESP_IP/ota` — Firmware Update
 
-![OTA Update](docs/ui_ota.png)
+<img src="https://raw.githubusercontent.com/ThePrintingPilot/Bambu-Light-Mod/refs/heads/main/images/ui_ota.png" width="400" height="650" /> 
 
 Update the firmware wirelessly without connecting a USB cable. Download the latest `.bin` from the [releases page](https://github.com/ThePrintingPilot/Bambu-Light-Mod/releases), select it on this page, and hit **Flash Firmware**. The ESP updates and reboots automatically.
 
