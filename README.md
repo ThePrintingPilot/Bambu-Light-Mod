@@ -10,7 +10,7 @@ Built by [The Printing Pilot](https://theprintingpilot.com) · [YouTube](https:/
 
 Bambu Light Mod is firmware for the **ESP32-C3** that connects to your Bambu Lab printer over your local network. It watches the chamber light state and mirrors it to a GPIO pin in real time — when the light turns on, the GPIO goes HIGH, when it turns off, it goes LOW.
 
-That signal drives a custom PCB to control anything you want to sync with your printer's chamber light — LED strips, air fresheners, fans, or any other accessory.
+The custom PCB will turn additional LED lights connected to it on and off, following the chamber light status of the printer.
 
 No Bambu Cloud. No internet required. Fully local.
 
