@@ -13,7 +13,7 @@
 
 ## What Is It? 
 
-<img src="https://raw.githubusercontent.com/ThePrintingPilot/Bambu-Light-Mod/refs/heads/main/images/TPP-Mono.png" width="85" align="right" />
+
 
 Bambu Light Mod is a smart lighting addon for Bambu Lab 3D printers. It adds a secondary LED strip inside your enclosure that automatically syncs with the printer's chamber light in real time — when the chamber light turns on, your addon lights follow, and when it turns off, they do too.
 
@@ -42,7 +42,6 @@ More importantly, every purchase directly supports The Printing Pilot. It allows
 
 ## Hardware
 
-<img src="https://raw.githubusercontent.com/ThePrintingPilot/Bambu-Light-Mod/refs/heads/main/images/TPP-Mono.png" width="85" align="right" />
 
 Bambu Light Mod is built around a fully custom hardware stack — everything from the PCB to the enclosure was designed specifically for this project.
 
@@ -121,7 +120,6 @@ Update the firmware wirelessly without connecting a USB cable. Download the late
 
 ## Supported Printers
 
-<img src="https://raw.githubusercontent.com/ThePrintingPilot/Bambu-Light-Mod/refs/heads/main/images/TPP-Mono.png" width="85" align="right" />
 
 Tested on the **P2S**. Software should work on any Bambu Lab printer with Developer Mode enabled, but for now the PCB comes with a 6 pin AMS/AMS Pro connector.
 
