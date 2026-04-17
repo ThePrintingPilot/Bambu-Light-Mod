@@ -22,15 +22,12 @@ Everything runs locally on your network. The ESP32 connects directly to the prin
 
 ---
 
-</td>
-<td valign="middle" align="center" width="25%">
-<img src="https://raw.githubusercontent.com/ThePrintingPilot/Bambu-Light-Mod/refs/heads/main/images/TPP-Mono.png" width="120" />
-</td>
-</tr></table>
-
 ## Get One
 
-<img src="https://raw.githubusercontent.com/ThePrintingPilot/Bambu-Light-Mod/refs/heads/main/images/TPP-Mono.png" width="" align="right" />
+
+<img src="https://raw.githubusercontent.com/ThePrintingPilot/Bambu-Light-Mod/refs/heads/main/images/TPP-Mono.png" width="80" align="right" style="margin-left:16px" />
+
+<img src="https://raw.githubusercontent.com/ThePrintingPilot/Bambu-Light-Mod/refs/heads/main/images/TPP-Mono.png" width="85" align="right" />
 
 Bambu Light Mod is fully open source — all the firmware, PCB files, and enclosure designs are available here for you to build yourself.
 
