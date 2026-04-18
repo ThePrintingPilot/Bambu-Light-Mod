@@ -3,9 +3,9 @@
   <h1>Bambu Light Mod</h1>
   <p><strong>A smart lighting addon that keeps your secondary LED lights in perfect sync with your Bambu Lab printer's chamber light — locally, instantly, no cloud required.</strong></p>
   <p>
-    <a href="https://theprintingpilot.com">🌐 Website</a> ·
-    <a href="https://www.youtube.com/@ThePrintingPilot">▶ YouTube</a> ·
-    <a href="https://github.com/ThePrintingPilot/Bambu-Light-Mod">◈ GitHub</a>
+    <a href="https://theprintingpilot.com"><img src="https://img.shields.io/badge/Website-ThePrintingPilot-00e5a0?logo=googlechrome&logoColor=white" alt="Website" /></a> 
+    <a href="https://www.youtube.com/@ThePrintingPilot"><img src="https://img.shields.io/badge/YouTube-ThePrintingPilot-FF0000?logo=youtube&logoColor=white" alt="YouTube" /></a> 
+    <a href="https://github.com/ThePrintingPilot"><img src="https://img.shields.io/badge/GitHub-ThePrintingPilot-181717?logo=github&logoColor=white" alt="GitHub" /></a>
   </p>
   <p>
     <img src="https://img.shields.io/endpoint?url=https://bambu-light-mod.tomernassi.workers.dev/badge" alt="Active Devices" />
