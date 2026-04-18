@@ -8,7 +8,7 @@
     <a href="https://github.com/ThePrintingPilot"><img src="https://img.shields.io/badge/GitHub-ThePrintingPilot-181717?logo=github&logoColor=white" alt="GitHub" /></a>
   </p>
   <p>
-    <img src="https://img.shields.io/endpoint?url=https://bambu-light-mod.tomernassi.workers.dev/badge" alt="Active Devices" />
+    <img src="https://img.shields.io/endpoint?url=https://bambu-light-mod.tomernassi.workers.dev/badge&style=flat-square" alt="Active Devices" />
   </p>
 </div>
 
