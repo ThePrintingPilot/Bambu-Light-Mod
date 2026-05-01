@@ -9,17 +9,15 @@
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Share+Tech+Mono&display=swap" rel="stylesheet">
   <style>
     :root {
-      --accent:   #00e5a0;
-      --accent2:  #00b8d4;
-      --bg:       #0a0a0f;
-      --surface:  #111118;
-      --border:   #1e1e1e;
-      --muted:    #444;
-      --text:     #e0e0e0;
+      --accent: #00e5a0;
+      --accent2: #00b8d4;
+      --bg: #0a0a0f;
+      --surface: #111118;
+      --border: #1e1e1e;
+      --muted: #444;
+      --text: #e0e0e0;
     }
-
     * { box-sizing: border-box; margin: 0; padding: 0; }
-
     body {
       background: var(--bg);
       color: var(--text);
@@ -30,10 +28,7 @@
       align-items: center;
       justify-content: center;
       padding: 24px 16px;
-      overflow-x: hidden;
     }
-
-    /* Background grid */
     body::before {
       content: '';
       position: fixed;
@@ -45,7 +40,6 @@
       pointer-events: none;
       z-index: 0;
     }
-
     .wrap {
       position: relative;
       z-index: 1;
@@ -56,29 +50,21 @@
       align-items: center;
       gap: 24px;
     }
-
-    /* Logo */
     .logo-wrap {
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 12px;
+      gap: 14px;
     }
-
-    .logo-wrap img {
-      width: 100px;
-      opacity: 0.9;
-    }
-
+    .logo-wrap img { width: 160px; opacity: 0.9; }
     .brand {
       font-family: 'Orbitron', monospace;
-      font-size: 22px;
+      font-size: 24px;
       font-weight: 900;
       color: #fff;
       letter-spacing: 2px;
       text-align: center;
     }
-
     .tagline {
       font-size: 10px;
       color: var(--accent);
@@ -86,8 +72,6 @@
       text-transform: uppercase;
       text-align: center;
     }
-
-    /* Card */
     .card {
       width: 100%;
       background: var(--surface);
@@ -97,7 +81,6 @@
       position: relative;
       overflow: hidden;
     }
-
     .card::before {
       content: '';
       position: absolute;
@@ -105,7 +88,6 @@
       height: 2px;
       background: linear-gradient(90deg, var(--accent), var(--accent2));
     }
-
     .card-title {
       font-family: 'Orbitron', monospace;
       font-size: 11px;
@@ -117,31 +99,34 @@
       align-items: center;
       gap: 8px;
     }
-
     .card-title::after {
       content: '';
       flex: 1;
       height: 1px;
       background: var(--border);
     }
-
-    /* Steps */
-    .steps {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-      margin-bottom: 24px;
+    .req-row { display: flex; gap: 8px; margin-bottom: 20px; }
+    .req-chip {
+      flex: 1;
+      background: rgba(0,229,160,0.04);
+      border: 1px solid rgba(0,229,160,0.12);
+      border-radius: 8px;
+      padding: 8px;
+      text-align: center;
     }
-
-    .step {
-      display: flex;
-      align-items: flex-start;
-      gap: 12px;
+    .req-chip .ri { font-size: 18px; margin-bottom: 4px; }
+    .req-chip .rl {
+      font-size: 9px;
+      color: var(--muted);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      font-family: 'Orbitron', monospace;
     }
-
+    .req-chip .rv { font-size: 10px; color: var(--accent); margin-top: 2px; }
+    .steps { display: flex; flex-direction: column; gap: 12px; margin-bottom: 24px; }
+    .step { display: flex; align-items: flex-start; gap: 12px; }
     .step-num {
-      width: 24px;
-      height: 24px;
+      width: 24px; height: 24px;
       border-radius: 50%;
       background: rgba(0,229,160,0.08);
       border: 1px solid rgba(0,229,160,0.2);
@@ -154,24 +139,14 @@
       flex-shrink: 0;
       margin-top: 1px;
     }
+    .step-text { font-size: 12px; color: #888; line-height: 1.6; }
+    .step-text strong { color: var(--text); font-weight: normal; }
 
-    .step-text {
-      font-size: 12px;
-      color: #888;
-      line-height: 1.6;
-    }
-
-    .step-text strong {
-      color: var(--text);
-      font-weight: normal;
-    }
-
-    /* Install button override */
+    /* Install button — override esp-web-tools default */
     esp-web-install-button {
       display: block;
       width: 100%;
     }
-
     esp-web-install-button::part(button) {
       width: 100%;
       padding: 14px;
@@ -186,22 +161,43 @@
       text-transform: uppercase;
       cursor: pointer;
       transition: all 0.2s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
     }
-
     esp-web-install-button::part(button):hover {
       background: #00ffb3;
       transform: translateY(-1px);
       box-shadow: 0 8px 24px rgba(0,229,160,0.25);
     }
 
-    esp-web-install-button[install-supported]::part(button) {
+    /* Fallback button shown before web component loads */
+    .install-fallback {
+      width: 100%;
+      padding: 14px;
+      background: var(--accent);
+      color: #0a0a0f;
+      border: none;
+      border-radius: 10px;
+      font-family: 'Orbitron', monospace;
+      font-size: 13px;
+      font-weight: 900;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: all 0.2s;
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 10px;
+      gap: 8px;
+    }
+    .install-fallback:hover {
+      background: #00ffb3;
+      transform: translateY(-1px);
+      box-shadow: 0 8px 24px rgba(0,229,160,0.25);
     }
 
-    /* Not supported message */
     .not-supported {
       display: none;
       text-align: center;
@@ -212,54 +208,26 @@
       font-size: 11px;
       color: #ef5350;
       line-height: 1.7;
+      margin-top: 12px;
     }
-
-    esp-web-install-button:not([install-supported]) ~ .not-supported {
-      display: block;
-    }
-
-    /* Requirements row */
-    .req-row {
-      display: flex;
-      gap: 8px;
-      margin-bottom: 20px;
-    }
-
-    .req-chip {
-      flex: 1;
-      background: rgba(0,229,160,0.04);
-      border: 1px solid rgba(0,229,160,0.12);
-      border-radius: 8px;
-      padding: 8px;
-      text-align: center;
-    }
-
-    .req-chip .ri {
-      font-size: 18px;
-      margin-bottom: 4px;
-    }
-
-    .req-chip .rl {
-      font-size: 9px;
-      color: var(--muted);
-      letter-spacing: 1px;
-      text-transform: uppercase;
+    .ver-badge {
       font-family: 'Orbitron', monospace;
-    }
-
-    .req-chip .rv {
-      font-size: 10px;
+      font-size: 9px;
       color: var(--accent);
-      margin-top: 2px;
+      background: rgba(0,229,160,0.08);
+      border: 1px solid rgba(0,229,160,0.2);
+      border-radius: 4px;
+      padding: 3px 8px;
+      letter-spacing: 2px;
     }
-
-    /* Links */
-    .links {
-      display: flex;
-      justify-content: center;
-      gap: 24px;
+    .note {
+      font-size: 10px;
+      color: var(--muted);
+      text-align: center;
+      line-height: 1.7;
     }
-
+    .note a { color: var(--accent); text-decoration: none; }
+    .links { display: flex; justify-content: center; gap: 24px; }
     .links a {
       font-family: 'Orbitron', monospace;
       font-size: 9px;
@@ -272,72 +240,24 @@
       align-items: center;
       gap: 5px;
     }
-
     .links a:hover { color: var(--accent); }
-
-    .links a svg { flex-shrink: 0; }
-
-    /* Version badge */
-    .ver-badge {
-      font-family: 'Orbitron', monospace;
-      font-size: 9px;
-      color: var(--accent);
-      background: rgba(0,229,160,0.08);
-      border: 1px solid rgba(0,229,160,0.2);
-      border-radius: 4px;
-      padding: 3px 8px;
-      letter-spacing: 2px;
-    }
-
-    /* Warning note */
-    .note {
-      font-size: 10px;
-      color: var(--muted);
-      text-align: center;
-      line-height: 1.7;
-      padding: 0 8px;
-    }
-
-    .note a {
-      color: var(--accent);
-      text-decoration: none;
-    }
-
-    @media (max-width: 420px) {
-      .req-chip .ri { font-size: 14px; }
-      .req-row { gap: 6px; }
-    }
   </style>
 </head>
 <body>
 <div class="wrap">
 
-  <!-- Logo & Brand -->
   <div class="logo-wrap">
     <img src="https://raw.githubusercontent.com/ThePrintingPilot/Bambu-Light-Mod/refs/heads/main/images/TPP-Mono.png" alt="The Printing Pilot" />
     <div class="brand">Bambu Light Mod</div>
     <div class="tagline">Firmware Installer &mdash; Web Edition</div>
   </div>
 
-  <!-- Install Card -->
   <div class="card">
     <div class="card-title">Requirements</div>
     <div class="req-row">
-      <div class="req-chip">
-        <div class="ri">🔌</div>
-        <div class="rl">Cable</div>
-        <div class="rv">USB-C Data</div>
-      </div>
-      <div class="req-chip">
-        <div class="ri">🌐</div>
-        <div class="rl">Browser</div>
-        <div class="rv">Chrome / Edge</div>
-      </div>
-      <div class="req-chip">
-        <div class="ri">⚙️</div>
-        <div class="rl">Board</div>
-        <div class="rv">ESP32-C3</div>
-      </div>
+      <div class="req-chip"><div class="ri">🔌</div><div class="rl">Cable</div><div class="rv">USB-C Data</div></div>
+      <div class="req-chip"><div class="ri">🌐</div><div class="rl">Browser</div><div class="rv">Chrome / Edge</div></div>
+      <div class="req-chip"><div class="ri">⚙️</div><div class="rl">Board</div><div class="rv">ESP32-C3</div></div>
     </div>
 
     <div class="card-title">Steps</div>
@@ -357,22 +277,22 @@
     </div>
 
     <esp-web-install-button manifest="manifest.json">
-      <button slot="activate">
-        ⚡ Install Bambu Light Mod
+      <button class="install-fallback" slot="activate">
+        ⚡ &nbsp;Install Bambu Light Mod
       </button>
+      <span slot="unsupported">
+        <div class="not-supported" style="display:block">
+          ⚠️ Web Serial is not supported in this browser.<br>
+          Please use <strong>Google Chrome</strong> or <strong>Microsoft Edge</strong> on desktop.
+        </div>
+      </span>
     </esp-web-install-button>
-
-    <div class="not-supported">
-      ⚠️ Web Serial is not supported in this browser.<br>
-      Please use <strong>Google Chrome</strong> or <strong>Microsoft Edge</strong> on desktop.
-    </div>
   </div>
 
-  <!-- Version & Links -->
-  <span class="ver-badge">V1.4.6</span>
+  <span class="ver-badge" id="verBadge">Loading...</span>
 
   <div class="note">
-    This installer flashes the latest firmware directly to your ESP32-C3.<br>
+    Always flashes the latest release automatically.<br>
     No Arduino IDE or drivers required.<br>
     <a href="https://github.com/ThePrintingPilot/Bambu-Light-Mod" target="_blank">View source on GitHub</a>
   </div>
@@ -393,5 +313,18 @@
   </div>
 
 </div>
+
+<script>
+  // Auto-fetch latest version from GitHub releases
+  fetch('https://api.github.com/repos/ThePrintingPilot/Bambu-Light-Mod/releases/latest')
+    .then(function(r){ return r.json(); })
+    .then(function(d){
+      var tag = (d.tag_name || 'Unknown').replace(/^v/i, '').toUpperCase();
+      document.getElementById('verBadge').textContent = 'V' + tag;
+    })
+    .catch(function(){
+      document.getElementById('verBadge').textContent = 'Latest';
+    });
+</script>
 </body>
 </html>
