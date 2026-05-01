@@ -8,259 +8,94 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Share+Tech+Mono&display=swap" rel="stylesheet">
   <style>
-    :root {
-      --accent: #00e5a0;
-      --accent2: #00b8d4;
-      --bg: #0a0a0f;
-      --surface: #111118;
-      --border: #1e1e1e;
-      --muted: #444;
-      --text: #e0e0e0;
-    }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      background: var(--bg);
-      color: var(--text);
-      font-family: 'Share Tech Mono', monospace;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 24px 16px;
-    }
-    body::before {
-      content: '';
-      position: fixed;
-      inset: 0;
-      background-image:
-        linear-gradient(rgba(0,229,160,0.03) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(0,229,160,0.03) 1px, transparent 1px);
-      background-size: 40px 40px;
-      pointer-events: none;
-      z-index: 0;
-    }
-    .wrap {
-      position: relative;
-      z-index: 1;
-      width: 100%;
-      max-width: 500px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 24px;
-    }
-    .logo-wrap {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 14px;
-    }
-    .logo-wrap img { width: 160px; opacity: 0.9; }
-    .brand {
-      font-family: 'Orbitron', monospace;
-      font-size: 24px;
-      font-weight: 900;
-      color: #fff;
-      letter-spacing: 2px;
-      text-align: center;
-    }
-    .tagline {
-      font-size: 10px;
-      color: var(--accent);
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      text-align: center;
-    }
-    .card {
-      width: 100%;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 28px 24px;
-      position: relative;
-      overflow: hidden;
-    }
-    .card::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; right: 0;
-      height: 2px;
-      background: linear-gradient(90deg, var(--accent), var(--accent2));
-    }
-    .card-title {
-      font-family: 'Orbitron', monospace;
-      font-size: 11px;
-      color: var(--accent);
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      margin-bottom: 16px;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-    .card-title::after {
-      content: '';
-      flex: 1;
-      height: 1px;
-      background: var(--border);
-    }
-    .req-row { display: flex; gap: 8px; margin-bottom: 20px; }
-    .req-chip {
-      flex: 1;
-      background: rgba(0,229,160,0.04);
-      border: 1px solid rgba(0,229,160,0.12);
-      border-radius: 8px;
-      padding: 8px;
-      text-align: center;
-    }
-    .req-chip .ri { font-size: 18px; margin-bottom: 4px; }
-    .req-chip .rl {
-      font-size: 9px;
-      color: var(--muted);
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      font-family: 'Orbitron', monospace;
-    }
-    .req-chip .rv { font-size: 10px; color: var(--accent); margin-top: 2px; }
-    .steps { display: flex; flex-direction: column; gap: 12px; margin-bottom: 24px; }
-    .step { display: flex; align-items: flex-start; gap: 12px; }
-    .step-num {
-      width: 24px; height: 24px;
-      border-radius: 50%;
-      background: rgba(0,229,160,0.08);
-      border: 1px solid rgba(0,229,160,0.2);
-      font-family: 'Orbitron', monospace;
-      font-size: 10px;
-      color: var(--accent);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-      margin-top: 1px;
-    }
-    .step-text { font-size: 12px; color: #888; line-height: 1.6; }
-    .step-text strong { color: var(--text); font-weight: normal; }
+    :root{--bg:#0c0c0e;--surface:#16161a;--border:#2a2a30;--accent:#00e5a0;--accent2:#ff6b35;--text:#f0f0f5;--muted:#6b6b80}
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{background:var(--bg);color:var(--text);font-family:'Share Tech Mono',monospace;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:20px}
+    body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellipse 60% 50% at 50% 0%,rgba(0,229,160,0.08),transparent);pointer-events:none;z-index:0}
+    .card{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:40px;width:100%;max-width:480px;position:relative;overflow:hidden;z-index:1}
+    .card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--accent),var(--accent2))}
+    .card>*{position:relative;z-index:1}
+    .ver{position:absolute;top:14px;right:16px;font-family:'Orbitron',monospace;font-size:9px;color:var(--accent);background:rgba(0,229,160,0.08);border:1px solid rgba(0,229,160,0.2);border-radius:4px;padding:3px 8px;letter-spacing:2px}
+    .logo{display:flex;flex-direction:column;align-items:center;text-align:center;gap:10px;margin-bottom:28px}
+    .logo img{width:90px;opacity:0.9}
+    h1{font-family:'Orbitron',monospace;font-size:18px;font-weight:900;letter-spacing:1px;color:var(--text);text-transform:uppercase}
+    .sub{color:var(--accent);font-size:10px;margin-top:6px;text-align:center;letter-spacing:2px;text-transform:uppercase}
+    .section{margin-bottom:24px}
+    .section-label{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--accent);margin-bottom:14px;display:flex;align-items:center;gap:8px;font-family:'Orbitron',monospace}
+    .section-label::after{content:'';flex:1;height:1px;background:var(--border)}
+    .req-row{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px}
+    .req-chip{background:rgba(0,229,160,0.04);border:1px solid rgba(0,229,160,0.1);border-radius:8px;padding:10px 6px;text-align:center}
+    .req-chip .ri{font-size:16px;margin-bottom:4px}
+    .req-chip .rl{font-size:8px;color:var(--muted);letter-spacing:1px;text-transform:uppercase;font-family:'Orbitron',monospace}
+    .req-chip .rv{font-size:10px;color:var(--accent);margin-top:2px}
+    .steps{display:flex;flex-direction:column;gap:10px}
+    .step{display:flex;align-items:flex-start;gap:10px}
+    .step-num{width:22px;height:22px;border-radius:50%;background:rgba(0,229,160,0.08);border:1px solid rgba(0,229,160,0.2);font-family:'Orbitron',monospace;font-size:9px;color:var(--accent);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}
+    .step-text{font-size:11px;color:var(--muted);line-height:1.6}
+    .step-text strong{color:var(--text);font-weight:normal}
 
-    /* Install button — override esp-web-tools default */
-    esp-web-install-button {
-      display: block;
-      width: 100%;
+    /* Install button */
+    esp-web-install-button{display:block;width:100%;margin-top:4px}
+    esp-web-install-button::part(button){
+      width:100%;padding:14px;
+      background:#00e5a0;color:#0a0a0f;
+      border:none;border-radius:10px;
+      font-family:'Orbitron',monospace;font-size:13px;font-weight:900;
+      letter-spacing:2px;text-transform:uppercase;
+      cursor:pointer;
+      display:flex;align-items:center;justify-content:center;gap:8px;
+      transition:all .2s;
     }
-    esp-web-install-button::part(button) {
-      width: 100%;
-      padding: 14px;
-      background: var(--accent);
-      color: #0a0a0f;
-      border: none;
-      border-radius: 10px;
-      font-family: 'Orbitron', monospace;
-      font-size: 13px;
-      font-weight: 900;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      cursor: pointer;
-      transition: all 0.2s;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
+    esp-web-install-button::part(button):hover{
+      background:#00ffb3;
+      transform:translateY(-1px);
+      box-shadow:0 8px 28px rgba(0,229,160,0.4);
     }
-    esp-web-install-button::part(button):hover {
-      background: #00ffb3;
-      transform: translateY(-1px);
-      box-shadow: 0 8px 24px rgba(0,229,160,0.25);
+    .install-fallback{
+      width:100%;padding:14px;
+      background:#00e5a0;color:#0a0a0f;
+      border:none;border-radius:10px;
+      font-family:'Orbitron',monospace;font-size:13px;font-weight:900;
+      letter-spacing:2px;text-transform:uppercase;
+      cursor:pointer;
+      display:flex;align-items:center;justify-content:center;gap:8px;
+      transition:all .2s;
+    }
+    .install-fallback:hover{
+      background:#00ffb3;
+      transform:translateY(-1px);
+      box-shadow:0 8px 28px rgba(0,229,160,0.4);
     }
 
-    /* Fallback button shown before web component loads */
-    .install-fallback {
-      width: 100%;
-      padding: 14px;
-      background: var(--accent);
-      color: #0a0a0f;
-      border: none;
-      border-radius: 10px;
-      font-family: 'Orbitron', monospace;
-      font-size: 13px;
-      font-weight: 900;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      cursor: pointer;
-      transition: all 0.2s;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-    }
-    .install-fallback:hover {
-      background: #00ffb3;
-      transform: translateY(-1px);
-      box-shadow: 0 8px 24px rgba(0,229,160,0.25);
-    }
-
-    .not-supported {
-      display: none;
-      text-align: center;
-      padding: 16px;
-      background: rgba(239,83,80,0.06);
-      border: 1px solid rgba(239,83,80,0.2);
-      border-radius: 8px;
-      font-size: 11px;
-      color: #ef5350;
-      line-height: 1.7;
-      margin-top: 12px;
-    }
-    .ver-badge {
-      font-family: 'Orbitron', monospace;
-      font-size: 9px;
-      color: var(--accent);
-      background: rgba(0,229,160,0.08);
-      border: 1px solid rgba(0,229,160,0.2);
-      border-radius: 4px;
-      padding: 3px 8px;
-      letter-spacing: 2px;
-    }
-    .note {
-      font-size: 10px;
-      color: var(--muted);
-      text-align: center;
-      line-height: 1.7;
-    }
-    .note a { color: var(--accent); text-decoration: none; }
-    .links { display: flex; justify-content: center; gap: 24px; }
-    .links a {
-      font-family: 'Orbitron', monospace;
-      font-size: 9px;
-      color: var(--muted);
-      text-decoration: none;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      transition: color 0.2s;
-      display: flex;
-      align-items: center;
-      gap: 5px;
-    }
-    .links a:hover { color: var(--accent); }
+    .note{font-size:10px;color:var(--muted);text-align:center;line-height:1.8;margin-top:16px}
+    .note a{color:var(--accent);text-decoration:none}
+    .links-row{display:flex;justify-content:center;align-items:center;gap:24px;margin-top:20px;padding-top:20px;border-top:1px solid var(--border)}
+    .link-btn{display:flex;align-items:center;gap:6px;font-size:10px;color:var(--muted);text-decoration:none;letter-spacing:1.5px;text-transform:uppercase;font-family:'Orbitron',monospace;transition:color .2s}
+    .link-btn:hover{color:var(--accent)}
+    .link-btn svg{flex-shrink:0}
   </style>
 </head>
 <body>
-<div class="wrap">
+<div class="card">
+  <span class="ver" id="verBadge">...</span>
 
-  <div class="logo-wrap">
+  <div class="logo">
     <img src="https://raw.githubusercontent.com/ThePrintingPilot/Bambu-Light-Mod/refs/heads/main/images/TPP-Mono.png" alt="The Printing Pilot" />
-    <div class="brand">Bambu Light Mod</div>
-    <div class="tagline">Firmware Installer &mdash; Web Edition</div>
+    <h1>Bambu Light Mod</h1>
+    <div class="sub">Firmware Installer &mdash; Web Edition</div>
   </div>
 
-  <div class="card">
-    <div class="card-title">Requirements</div>
+  <div class="section">
+    <div class="section-label">Requirements</div>
     <div class="req-row">
       <div class="req-chip"><div class="ri">🔌</div><div class="rl">Cable</div><div class="rv">USB-C Data</div></div>
       <div class="req-chip"><div class="ri">🌐</div><div class="rl">Browser</div><div class="rv">Chrome / Edge</div></div>
       <div class="req-chip"><div class="ri">⚙️</div><div class="rl">Board</div><div class="rv">ESP32-C3</div></div>
     </div>
+  </div>
 
-    <div class="card-title">Steps</div>
+  <div class="section">
+    <div class="section-label">Steps</div>
     <div class="steps">
       <div class="step">
         <div class="step-num">1</div>
@@ -275,21 +110,19 @@
         <div class="step-text">Wait for the flash to complete, then connect to <strong>BambuLightMod-Setup</strong> WiFi to configure</div>
       </div>
     </div>
-
-    <esp-web-install-button manifest="manifest.json">
-      <button class="install-fallback" slot="activate">
-        ⚡ &nbsp;Install Bambu Light Mod
-      </button>
-      <span slot="unsupported">
-        <div class="not-supported" style="display:block">
-          ⚠️ Web Serial is not supported in this browser.<br>
-          Please use <strong>Google Chrome</strong> or <strong>Microsoft Edge</strong> on desktop.
-        </div>
-      </span>
-    </esp-web-install-button>
   </div>
 
-  <span class="ver-badge" id="verBadge">Loading...</span>
+  <esp-web-install-button manifest="manifest.json">
+    <button class="install-fallback" slot="activate">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="#0a0a0f" stroke="none"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+      Install Bambu Light Mod
+    </button>
+    <span slot="unsupported">
+      <div style="margin-top:4px;padding:14px;background:rgba(239,83,80,0.06);border:1px solid rgba(239,83,80,0.2);border-radius:10px;font-size:11px;color:#ef5350;text-align:center;line-height:1.7">
+        ⚠️ Web Serial not supported.<br>Please use <strong>Chrome</strong> or <strong>Edge</strong> on desktop.
+      </div>
+    </span>
+  </esp-web-install-button>
 
   <div class="note">
     Always flashes the latest release automatically.<br>
@@ -297,34 +130,30 @@
     <a href="https://github.com/ThePrintingPilot/Bambu-Light-Mod" target="_blank">View source on GitHub</a>
   </div>
 
-  <div class="links">
-    <a href="https://theprintingpilot.com" target="_blank">
+  <div class="links-row">
+    <a class="link-btn" href="https://theprintingpilot.com" target="_blank">
       <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
       Website
     </a>
-    <a href="https://www.youtube.com/@ThePrintingPilot" target="_blank">
+    <a class="link-btn" href="https://www.youtube.com/@ThePrintingPilot" target="_blank">
       <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.7 15.5V8.5l6.3 3.5-6.3 3.5z"/></svg>
       YouTube
     </a>
-    <a href="https://github.com/ThePrintingPilot/Bambu-Light-Mod" target="_blank">
+    <a class="link-btn" href="https://github.com/ThePrintingPilot/Bambu-Light-Mod" target="_blank">
       <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.4 0 0 5.4 0 12c0 5.3 3.4 9.8 8.2 11.4.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.5-1.4-1.3-1.8-1.3-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1.1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.3 4.7 18.3 5 18.3 5c.6 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6C20.6 21.8 24 17.3 24 12c0-6.6-5.4-12-12-12z"/></svg>
       GitHub
     </a>
   </div>
-
 </div>
 
 <script>
-  // Auto-fetch latest version from GitHub releases
   fetch('https://api.github.com/repos/ThePrintingPilot/Bambu-Light-Mod/releases/latest')
     .then(function(r){ return r.json(); })
     .then(function(d){
-      var tag = (d.tag_name || 'Unknown').replace(/^v/i, '').toUpperCase();
-      document.getElementById('verBadge').textContent = 'V' + tag;
+      var tag = (d.tag_name || '').replace(/^v/i,'').toUpperCase();
+      document.getElementById('verBadge').textContent = tag ? 'V'+tag : 'Latest';
     })
-    .catch(function(){
-      document.getElementById('verBadge').textContent = 'Latest';
-    });
+    .catch(function(){ document.getElementById('verBadge').textContent = 'Latest'; });
 </script>
 </body>
 </html>
