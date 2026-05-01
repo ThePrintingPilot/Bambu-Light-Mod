@@ -1,0 +1,64 @@
+name: Update Web Installer
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  update-installer:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Get release version
+        id: version
+        run: echo "VERSION=${{ github.event.release.tag_name }}" >> $GITHUB_OUTPUT
+
+      - name: Download firmware from release
+        run: |
+          curl -L \
+            -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
+            "${{ github.event.release.assets_url }}" \
+            -o assets.json
+
+          # Get the download URL for the .bin file
+          BIN_URL=$(cat assets.json | python3 -c "
+          import json, sys
+          assets = json.load(sys.stdin)
+          for a in assets:
+              if a['name'].endswith('.bin'):
+                  print(a['browser_download_url'])
+                  break
+          ")
+
+          echo "Downloading: $BIN_URL"
+          curl -L "$BIN_URL" -o docs/bambu_gpio_sync.bin
+
+      - name: Update manifest version
+        run: |
+          VERSION="${{ steps.version.outputs.VERSION }}"
+          # Strip leading 'v' or 'V' if present
+          VERSION_CLEAN=$(echo "$VERSION" | sed 's/^[vV]//')
+
+          python3 -c "
+          import json
+          with open('docs/manifest.json') as f:
+              m = json.load(f)
+          m['version'] = '$VERSION_CLEAN'
+          m['builds'][0]['parts'][0]['path'] = 'bambu_gpio_sync.bin'
+          with open('docs/manifest.json', 'w') as f:
+              json.dump(m, f, indent=2)
+          print('Manifest updated to version $VERSION_CLEAN')
+          "
+
+      - name: Commit and push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add docs/bambu_gpio_sync.bin docs/manifest.json
+          git commit -m "chore: update installer to ${{ steps.version.outputs.VERSION }}"
+          git push
