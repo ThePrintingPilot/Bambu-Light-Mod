@@ -7,7 +7,7 @@
       "chipFamily": "ESP32-C3",
       "parts": [
         {
-          "path": "https://github.com/ThePrintingPilot/Bambu-Light-Mod/releases/latest/download/bambu_gpio_sync.bin",
+          "path": "bambu_gpio_sync.bin",
           "offset": 0
         }
       ]
