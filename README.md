@@ -52,31 +52,47 @@ Bambu Light Mod is built around a fully custom hardware stack — everything fro
 
 The heart of the project is a custom-designed PCB built around the ESP32-C3. It handles the WiFi connection to the printer, drives the LED lights, and manages all the onboard electronics. There are no off-the-shelf modules or loose wiring — everything is integrated onto a single compact board.
 
+<div align="center">
 <img src="https://raw.githubusercontent.com/ThePrintingPilot/Bambu-Light-Mod/refs/heads/main/images/PCB.png" width="430" height="260" />
+</div>
 
 ### Power via AMS Connector
 
 The PCB draws power directly from the printer's AMS connector. No external power supply, no USB cable, no extra wiring. Plug it into the AMS port and the board powers up immediately.
 
+<div align="center">
 <img src="https://raw.githubusercontent.com/ThePrintingPilot/Bambu-Light-Mod/refs/heads/main/images/3.jpg" width="430" height="250" />
+</div>
 
 ### Custom 3D Printed Enclosure
 
 The electronics sit inside a custom 3D printed enclosure with embedded magnets that attach directly to the outside of the printer. The enclosure was designed with the Bambu Light Mod logo embossed on the front and is printed directly on the Bambu Lab printer it controls.
 
+<div align="center">
 <img src="https://raw.githubusercontent.com/ThePrintingPilot/Bambu-Light-Mod/refs/heads/main/images/1.jpg" width="430" height="250" />
+</div>
 
 ### Physical Toggle Switch
 
 A mechanical keyboard switch is mounted on the enclosure for offline manual control. Press it at any time to toggle the lights on or off independently of the printer — useful when you want to control the lights without opening the web interface or when the printer is idle.
 
+<div align="center">
 <img src="https://raw.githubusercontent.com/ThePrintingPilot/Bambu-Light-Mod/refs/heads/main/images/2.jpg" width="430" height="250" />
+</div>
+
 
 ---
 
 ## Getting Started
 
-1. Flash the firmware to your ESP32-C3
+1. **Flash the firmware** to your ESP32-C3 using our [Web Installer](https://theprintingpilot.github.io/Bambu-Light-Mod/) — no Arduino IDE or drivers needed. Just plug in your ESP32-C3 via USB-C, open the link in Chrome or Edge, and click **Install Bambu Light Mod**. The firmware flashes automatically in under a minute.
+
+<div align="center">
+  <img src="https://raw.githubusercontent.com/ThePrintingPilot/Bambu-Light-Mod/refs/heads/main/images/Firmware-installer-web-tool.png" width="350" alt="Settings window">
+</div>
+
+
+
 2. Connect to the **`BambuLightMod-Setup`** WiFi hotspot from your phone or laptop
 3. Open **`http://192.168.4.1`** and fill in your WiFi and printer details
 4. Hit **Save & Connect** — the ESP joins your network and starts syncing within seconds
@@ -95,7 +111,10 @@ The ESP hosts three pages you can access from any browser on your network.
 
 ### `http://ESP_IP` — Config
 
+<div align="center">
 <img src="https://raw.githubusercontent.com/ThePrintingPilot/Bambu-Light-Mod/refs/heads/main/images/ui_config.png" width="400" height="650" />
+</div>
+
 
 The main setup page. Enter your WiFi credentials, printer IP address, and local access code. The serial number is auto-detected from the printer — no need to look it up manually.
 
@@ -107,7 +126,9 @@ If a newer firmware version is available on GitHub, the version badge in the top
 
 ### `http://ESP_IP/webserial` — Live Logs
 
+<div align="center">
 <img src="https://raw.githubusercontent.com/ThePrintingPilot/Bambu-Light-Mod/refs/heads/main/images/ui_webserial.png" width="400" height="550" />
+</div>
 
 A live log viewer — no USB cable or Arduino IDE needed. See exactly what the ESP is doing in real time, colour coded by module. Useful for debugging connection issues or just confirming everything is working.
 
@@ -115,7 +136,9 @@ A live log viewer — no USB cable or Arduino IDE needed. See exactly what the E
 
 ### `http://ESP_IP/ota` — Firmware Update
 
+<div align="center">
 <img src="https://raw.githubusercontent.com/ThePrintingPilot/Bambu-Light-Mod/refs/heads/main/images/ui_ota.png" width="400" height="650" />
+</div>
 
 Update the firmware wirelessly without connecting a USB cable. Download the latest `.bin` from the [releases page](https://github.com/ThePrintingPilot/Bambu-Light-Mod/releases), select it on this page, and hit **Flash Firmware**. The ESP updates and reboots automatically.
 
