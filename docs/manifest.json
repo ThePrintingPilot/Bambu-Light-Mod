@@ -1,0 +1,17 @@
+{
+  "name": "Bambu Light Mod",
+  "version": "1.4.6",
+  "home_assistant_domain": "bambu_light_mod",
+  "new_install_prompt_erase": true,
+  "builds": [
+    {
+      "chipFamily": "ESP32-C3",
+      "parts": [
+        {
+          "path": "https://github.com/ThePrintingPilot/Bambu-Light-Mod/releases/latest/download/bambu_gpio_sync.bin",
+          "offset": 0
+        }
+      ]
+    }
+  ]
+}
