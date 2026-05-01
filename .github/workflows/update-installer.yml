@@ -4,11 +4,6 @@ on:
   release:
     types: [published]
   workflow_dispatch:
-    inputs:
-      version:
-        description: 'Version to set in manifest (e.g. 1.5.0)'
-        required: true
-        default: '1.5.0'
 
 jobs:
   update-installer:
@@ -20,31 +15,31 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v4
 
-      - name: Get release version
-        id: version
+      - name: Get latest release version and download firmware
+        id: release
         run: |
-          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
-            echo "VERSION=${{ github.event.inputs.version }}" >> $GITHUB_OUTPUT
-          else
-            echo "VERSION=${{ github.event.release.tag_name }}" >> $GITHUB_OUTPUT
-          fi
+          # Fetch latest release info
+          RELEASE=$(curl -s \
+            -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
+            "https://api.github.com/repos/ThePrintingPilot/Bambu-Light-Mod/releases/latest")
 
-      - name: Download firmware from release
-        run: |
-          VERSION="${{ steps.version.outputs.VERSION }}"
+          VERSION=$(echo "$RELEASE" | python3 -c "import json,sys; print(json.load(sys.stdin)['tag_name'])")
+          BIN_URL=$(echo "$RELEASE" | python3 -c "
+          import json,sys
+          r = json.load(sys.stdin)
+          for a in r['assets']:
+              if a['name'].endswith('.bin'):
+                  print(a['browser_download_url'])
+                  break
+          ")
 
-          # Try with and without leading V
-          for TAG in "$VERSION" "V$VERSION" "v$VERSION"; do
-            URL="https://github.com/ThePrintingPilot/Bambu-Light-Mod/releases/download/$TAG/bambu_gpio_sync.bin"
-            echo "Trying: $URL"
-            HTTP=$(curl -L -w "%{http_code}" -o docs/bambu_gpio_sync.bin \
-              -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
-              "$URL")
-            if [ "$HTTP" = "200" ]; then
-              echo "Downloaded successfully from tag: $TAG"
-              break
-            fi
-          done
+          echo "VERSION=$VERSION" >> $GITHUB_OUTPUT
+          echo "Latest version: $VERSION"
+          echo "Downloading: $BIN_URL"
+
+          curl -L "$BIN_URL" \
+            -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
+            -o docs/bambu_gpio_sync.bin
 
           if [ ! -s docs/bambu_gpio_sync.bin ]; then
             echo "ERROR: Could not download .bin file"
@@ -53,7 +48,7 @@ jobs:
 
       - name: Update manifest version
         run: |
-          VERSION="${{ steps.version.outputs.VERSION }}"
+          VERSION="${{ steps.release.outputs.VERSION }}"
           VERSION_CLEAN=$(echo "$VERSION" | sed 's/^[vV]//')
 
           python3 -c "
@@ -72,5 +67,5 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add docs/bambu_gpio_sync.bin docs/manifest.json
-          git diff --staged --quiet || git commit -m "chore: update installer to ${{ steps.version.outputs.VERSION }}"
+          git diff --staged --quiet || git commit -m "chore: update installer to ${{ steps.release.outputs.VERSION }}"
           git push
