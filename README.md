@@ -37,7 +37,7 @@ That said, because we manufacture these in volume, **buying directly from our st
 
 More importantly, every purchase directly supports The Printing Pilot. It allows us to keep improving this product, push firmware updates, and continue designing new tools for the Bambu Lab community.
 
-> ### 🛒 [Buy from The Printing Pilot Store](https://theprintingpilot.com)
+> ### 🛒 [Buy from The Printing Pilot Store](https://theprintingpilot.com/products/bambu-light-mod)
 > Fully assembled · Tested · Ready to plug in
 
 
