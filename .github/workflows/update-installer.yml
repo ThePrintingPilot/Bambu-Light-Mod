@@ -28,7 +28,7 @@ jobs:
           import json,sys
           r = json.load(sys.stdin)
           for a in r['assets']:
-              if a['name'].endswith('.bin'):
+              if a['name'].endswith('.bin') and 'merged' in a['name']:
                   print(a['browser_download_url'])
                   break
           ")
